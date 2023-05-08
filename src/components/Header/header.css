@@ -1,0 +1,93 @@
+/* * {
+    outline: 1px solid red;
+} */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+a:hover {
+    color: var(--one);
+}
+
+.btn-login {
+    background-color: var(--one);
+    color: var(--white);
+    padding: .8rem 1.2rem;
+    border-radius: 20px;
+    transition: all .3s;
+}
+
+.btn-login:hover {
+    background-color: var(--white);
+    color: var(--one);
+}
+
+ul a::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 2px;
+    margin-top: 2px;
+    background-color: var(--white);
+    transition: all .4s;
+}
+
+ul a:hover::after {
+    background-color: var(--one);
+    width: 100%;
+}
+
+.btn-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    button {
+        border: 1px solid var(--white);
+        background-color: transparent;
+        color: var(--white);
+        padding: 8px;
+        border-radius: 20px;
+    }
+
+    ul {
+        position: absolute;
+        top: -100vh;
+        background-color: var(--grey);
+        border-radius: 20px;
+        padding: 1rem 1.5rem;
+        transition: all .3s;
+    }
+
+    ul a {
+        color: var(--black);
+    }
+    .btn-menu {
+        display: block;
+        transition: all .3s;
+    }
+    .btn-menu:hover {
+        background-color: var(--white);
+        color: var(--black);
+    }
+    .btn-login {
+        padding: .4rem 1rem;
+    }
+    .menu-active {
+        top: 20vh;
+    }
+}
