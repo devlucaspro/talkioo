@@ -36,7 +36,7 @@ const Header = () => {
       <Btn to='/login'>Login <i className="fa-solid fa-right-to-bracket fa-sm"></i></Btn>
 
       <div id='invisible-div'>
-        div invisible
+        .
       </div>
     </header>
   )

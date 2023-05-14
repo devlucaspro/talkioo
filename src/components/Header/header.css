@@ -80,7 +80,7 @@ header ul a:hover::after {
         color: var(--black);
     }
     .menu-active {
-        top: 20vh;
+        top: 16vh;
     }
     #invisible-div {
         display: block;
