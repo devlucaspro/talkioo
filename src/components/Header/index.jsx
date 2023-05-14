@@ -21,6 +21,7 @@ const Header = () => {
     divI.addEventListener('click', () => {
       divI.classList.remove('div-visible');
       menu.classList.remove('menu-active');
+      document.body.classList.remove('overflow');
     });
   };
 
