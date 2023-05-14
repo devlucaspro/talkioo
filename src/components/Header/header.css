@@ -8,35 +8,23 @@ header {
     align-items: center;
 }
 
-img {
+.logo {
     width: 80px;
     border-radius: 50%;
 }
 
-ul {
+header ul {
     list-style: none;
     display: flex;
     gap: 3rem;
+    z-index: 1000;
 }
 
 a:hover {
     color: var(--one);
 }
 
-.btn-login {
-    background-color: var(--one);
-    color: var(--white);
-    padding: .8rem 1.2rem;
-    border-radius: 20px;
-    transition: all .3s;
-}
-
-.btn-login:hover {
-    background-color: var(--white);
-    color: var(--one);
-}
-
-ul a::after {
+header ul a::after {
     content: '';
     display: block;
     width: 0px;
@@ -46,14 +34,21 @@ ul a::after {
     transition: all .4s;
 }
 
-ul a:hover::after {
+header ul a:hover::after {
     background-color: var(--one);
     width: 100%;
 }
 
 .btn-menu {
     display: none;
+    z-index: 1000;
 }
+
+#invisible-div {
+    display: none;
+}
+
+
 
 @media (max-width: 768px) {
     button {
@@ -64,7 +59,7 @@ ul a:hover::after {
         border-radius: 20px;
     }
 
-    ul {
+    header ul {
         position: absolute;
         top: -100vh;
         background-color: var(--grey);
@@ -73,7 +68,7 @@ ul a:hover::after {
         transition: all .3s;
     }
 
-    ul a {
+    header ul a {
         color: var(--black);
     }
     .btn-menu {
@@ -84,10 +79,20 @@ ul a:hover::after {
         background-color: var(--white);
         color: var(--black);
     }
-    .btn-login {
-        padding: .4rem 1rem;
-    }
     .menu-active {
         top: 20vh;
+    }
+    #invisible-div {
+        display: block;
+        position: absolute;
+        left: -100vw;
+        width: 100vw;
+        height: 500vh;
+        background-color: var(--black);
+        opacity: 70%;
+    }
+    
+    .div-visible {
+        left: 0 !important;
     }
 }

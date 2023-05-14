@@ -1,0 +1,86 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    margin-top: 5rem;
+    padding-inline: 1rem;
+}
+
+main .cta {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+main .cta h1 {
+    font-size: 60px;
+    background-image: radial-gradient(circle, #4373ED, var(--grey));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient 5s linear infinite;
+    background-size: 200% 200%;
+}
+
+main .cta h1 span {
+    color: var(--white);
+}
+
+main .cta .card-cta {
+    width: max-content;
+    border: 1px solid var(--one);
+    color: var(--grey);
+    border-radius: 20px;
+    padding: 5px 1rem;
+    font-style: italic;
+}
+
+.cta-img {
+    width: 100%;
+    max-width: 400px;
+    transition: all .3s;
+}
+
+.cta-img:hover {
+    transform: translateY(-5%);
+}
+
+.btn-div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}  
+  
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    main .cta {
+        align-items: center;
+        text-align: center;
+    }
+    main .cta p {
+        width: 80%;
+    }
+}  
+  
+  
+  
