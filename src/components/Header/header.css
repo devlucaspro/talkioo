@@ -51,7 +51,7 @@ header ul a:hover::after {
 
 
 @media (max-width: 768px) {
-    button {
+    header button {
         border: 1px solid var(--white);
         background-color: transparent;
         color: var(--white);

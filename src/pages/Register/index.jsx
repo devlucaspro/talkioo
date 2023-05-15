@@ -1,22 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './login.css'
+import '../Login/login.css'
 
-const Login = () => {
+const Register = () => {
 
 
 
   return (
     <div className='container-login'>
-      <h1>Faça Login</h1>
+      <h1>Cadastrar</h1>
       <form>
+        <input type="text" placeholder='Digite seu nome' />
         <input type="text" placeholder='Digite seu email' />
         <input type="text" placeholder='Digite sua senha' />
-        <button type="submit">Entrar</button>
+        <button type="submit">Cadastrar</button>
       </form>
-      <Link to='/register'>Não possui uma conta? Criar</Link>
+      <Link to='/login'>Já possui uma conta? Faça Login</Link>
     </div>
   )
 }
 
-export default Login;
+export default Register;

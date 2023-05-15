@@ -12,7 +12,7 @@ const Home = () => {
         <p>Aprenda Inglês na Talkioo, o melhor site para aprender Inglês.</p>
         <div className='btn-div'>
           <Btn to='/login'>Começar</Btn>
-          <a href='#sobre'>Conheça-nos</a>
+          <Link to='/about'>Conheça-nos</Link>
         </div>
       </div>
       <img className='cta-img' src="./assets/cta-img.png" alt="CTA Image" />

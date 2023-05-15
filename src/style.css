@@ -47,3 +47,7 @@ ul {
 .overflow {
     overflow: hidden;
 }
+
+button {
+    cursor: pointer;
+}
