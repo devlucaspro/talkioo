@@ -23,11 +23,11 @@
 }
 
 .container-erro h1 {
-    color: var(--white);
+    color: var(--black);
 }
 
 .container-erro p {
-    color: var(--grey);
+    color: var(--black);
     line-height: 150%;
 }
 

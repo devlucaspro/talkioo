@@ -52,20 +52,20 @@ header ul a:hover::after {
 
 @media (max-width: 768px) {
     header button {
-        border: 1px solid var(--white);
+        border: 1px solid var(--black);
         background-color: transparent;
-        color: var(--white);
-        padding: 8px;
+        color: var(--black);
+        padding: .7rem .7rem;
         border-radius: 20px;
     }
 
     header ul {
         position: absolute;
         top: -100vh;
-        background-color: var(--grey);
+        background-color: var(--white);
         border-radius: 20px;
         padding: 1rem 1.5rem;
-        transition: all .3s;
+        transition: all .5s;
     }
 
     header ul a {

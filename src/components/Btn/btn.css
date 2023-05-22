@@ -7,12 +7,12 @@
 }
 
 .btn-login:hover {
-    background-color: var(--white);
+    background-color: var(--black);
     color: var(--one);
 }
 
 @media (max-width: 768px) {
     .btn-login {
-        padding: .4rem 1rem;
+        padding: .6rem 1rem;
     }
 }

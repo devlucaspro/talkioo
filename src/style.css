@@ -9,11 +9,17 @@ font-family: 'Inter', sans-serif;
     box-sizing: border-box;
 }
 :root {
-    --black: #181818;
-    --white: #F1F1F1;
-    --grey: #D1D1D1;
+    --black: #0e0e0e;
+    --white: #f8f8f8;
+    --grey: #f7f7f7;
     --one: #4373ED;
     --two: #e63030;
+
+    /* --black: #f7f7f7;
+    --white: #F1F1F1;
+    --grey: #0e0e0e;
+    --one: #4373ED;
+    --two: #e63030; */
 }
 
 body {
@@ -21,13 +27,13 @@ body {
     color: var(--white);
     font-family: 'Inter', sans-serif;
 
-    background-image: radial-gradient(circle, var(--black), #252525);
+    background-image: radial-gradient(circle, var(--white), #dfdfdf);
     animation: gradient 15s linear infinite;
     background-size: 200% 200%;
 }
 
 p {
-    color: var(--grey);
+    color: var(--black);
 }
 
 h1 {
@@ -36,7 +42,7 @@ h1 {
 
 a {
     text-decoration: none;
-    color: var(--white);
+    color: var(--black);
     transition: all .3s;
 }
 

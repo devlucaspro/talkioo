@@ -17,7 +17,7 @@ main .cta {
 
 main .cta h1 {
     font-size: 60px;
-    background-image: radial-gradient(circle, #4373ED, var(--grey));
+    background-image: radial-gradient(circle, #4373ED, var(--two));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -26,13 +26,13 @@ main .cta h1 {
 }
 
 main .cta h1 span {
-    color: var(--white);
+    color: var(--two);
 }
 
 main .cta .card-cta {
     width: max-content;
     border: 1px solid var(--one);
-    color: var(--grey);
+    color: var(--one);
     border-radius: 20px;
     padding: 5px 1rem;
     font-style: italic;

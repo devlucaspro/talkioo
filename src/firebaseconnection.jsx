@@ -1,11 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getAnalytics } from "firebase/analytics";
 import { getAuth } from 'firebase/auth'
-// Follow this pattern to import other Firebase services
-// import { } from 'firebase/<service>';
 
-// TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDabT79ykUkef23rpx6ek0ZRyIMnKhSNo4",
   authDomain: "talkioo.firebaseapp.com",
@@ -19,6 +15,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 const db = getFirestore(app);
-const analytics = getAnalytics(app);
 
 export { db, auth };

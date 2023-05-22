@@ -4,13 +4,19 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    margin-top: 7.5rem;
+    margin-top: 6rem;
     margin-bottom: 15rem;
 }
 
 .container-login h1 {
     padding: 1rem 0;
     text-align: center;
+    color: var(--black);
+}
+
+.container-login p {
+    text-align: center;
+    padding: 0 0 2rem 0;
 }
 
 .container-login form {
@@ -22,8 +28,8 @@
 .container-login form input {
     height: 35px;
     padding-inline: 1rem;
-    background-color: var(--white);
-    border: none;
+    background-color: var(--grey);
+    border: 1px solid var(--black);
     border-radius: 4px;
 }
 
@@ -43,5 +49,5 @@
     text-align: center;
     padding: 5px 0;
     margin-top: 1rem;
-    color: var(--grey);
+    color: var(--black);
 }
