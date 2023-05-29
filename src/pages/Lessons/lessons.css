@@ -1,0 +1,89 @@
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.container h2 {
+    color: var(--black);
+    line-height: 120%;
+    padding: 2rem 0;
+}
+
+.flex-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-color: aqua;
+    padding: 1rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 280px;
+    height: 140px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h3 {
+    color: var(--black);
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-footer p {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 5px 15px;
+    border-radius: 8px;
+}
+
+.card-footer a {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 7px 12px;
+    border-radius: 50%;
+}
+
+.card-footer a:hover {
+    color: var(--one);
+}
+
+.card-footer a i {
+    margin-left: 2px;
+}
+
+.btn-logout {
+    border: none;
+    display: block;
+    margin-left: 90%;
+    margin-top: 3rem;
+}
+
+.btn-logout:hover {
+    color: var(--one);
+}
+
+@media (max-width: 551px) {
+    .card {
+        max-width: 100%;
+    }
+}
+@media (min-width: 552px) and (max-width: 968px) {
+    .card {
+        width: 100%;
+        max-width: 240px;
+        height: 120px;
+    }
+}

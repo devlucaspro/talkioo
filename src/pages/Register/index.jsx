@@ -12,7 +12,7 @@ const Register = () => {
 
   async function handleLogin(e) {
     await signUp(e)
-    navigate('/lessons')
+    navigate('/lessons') //retirar se houver o user, controle de tudo pelo Private.jsx
   }
 
   return (

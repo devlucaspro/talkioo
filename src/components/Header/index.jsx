@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import './header.css'
 import Btn from '../Btn'
+import { appContext } from '../../contexts/auth';
 
 const Header = () => {
+
+  const {user} = useContext(appContext);
 
   function openMenu() {
     let menu = document.getElementById('menu')
@@ -30,10 +33,11 @@ const Header = () => {
       <img className='logo' src="./assets/logo.png" alt="Talkioo"/>
       <button className='btn-menu' onClick={openMenu}>Menu <i className="fa-solid fa-chevron-down"></i></button>
       <ul id='menu'>
-        <li><Link to='/'>Home</Link></li>
+        {user ? true : <li><Link to='/'>Home</Link></li>}
         <li><Link to='/lessons'>Lessons <i className="fa-solid fa-paperclip fa-sm"></i></Link></li>
+        {user && <li><Link to='/blog'>Blog</Link></li>}
       </ul>
-      <Btn to='/login'>Login <i className="fa-solid fa-right-to-bracket fa-sm"></i></Btn>
+      {user ? <button className='btn-bell'><i className="fa-solid fa-bell fa-xl"></i></button> : <Btn to='/login'>Login <i className="fa-solid fa-right-to-bracket fa-sm"></i></Btn>}
 
       <div id='invisible-div'>
         .

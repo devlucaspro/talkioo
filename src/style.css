@@ -15,21 +15,23 @@ font-family: 'Inter', sans-serif;
     --one: #4373ED;
     --two: #e63030;
 
-    /* --black: #f7f7f7;
-    --white: #F1F1F1;
-    --grey: #0e0e0e;
-    --one: #4373ED;
-    --two: #e63030; */
+    --yellow: #F2DF34;
+    --red: #FD5D39;
+    --blue: #39B4FA;
+    --green: #5AF234;
+    --green-light: #39FD87;
+    --orange: #FAA139;
+}
+
+::selection {
+    background-color: var(--blue);
+    color: var(--white);
 }
 
 body {
-    background-color: var(--black);
+    background-color: var(--white);
     color: var(--white);
     font-family: 'Inter', sans-serif;
-
-    background-image: radial-gradient(circle, var(--white), #dfdfdf);
-    animation: gradient 15s linear infinite;
-    background-size: 200% 200%;
 }
 
 p {
