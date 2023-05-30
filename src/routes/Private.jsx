@@ -1,19 +1,14 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
+import { Navigate } from 'react-router-dom';
 import { appContext } from '../contexts/auth';
-import { useNavigate } from 'react-router-dom';
 
-const Private = ({ children }) => {
+const Private = ({ children, redirectPath = '/' }) => {
 
-  const {user, setUser} = useContext(appContext);
-  const navigate = useNavigate()
+  const {user} = useContext(appContext);
 
-  useEffect(() => {
-    if(user === null) {
-      navigate('/')
-    } else {
-      navigate('/lessons')
-    }
-  }, [user]);
+  if(!user) {
+    return <Navigate to={redirectPath} replace />
+  }
 
   return children;
 }

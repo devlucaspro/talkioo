@@ -1,22 +1,37 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { auth, db } from '../firebaseconnection';
 
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth'
-import { doc, setDoc } from 'firebase/firestore'
+import { doc, getDoc, setDoc } from 'firebase/firestore'
+
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 export const appContext = createContext({});
 
 const AuthProvider = ({ children }) => {
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [user, setUser] = useState(null);
-
   const [loading, setLoading] = useState(false);
 
-  async function signUp(e) {
-    e.preventDefault()
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    async function loadUser() {
+      const storageUser = localStorage.getItem('userToken');
+
+      if(storageUser) {
+        setUser(JSON.parse(storageUser));
+        setLoading(false);
+      }
+
+      setLoading(false);
+    }
+
+    loadUser();
+  }, [])
+
+  async function signUp(email, password, name) {
     
     await createUserWithEmailAndPassword(auth, email, password)
     .then( async (values) => {
@@ -25,57 +40,62 @@ const AuthProvider = ({ children }) => {
       const userUid = values.user.uid
       const docRef = doc(db, 'user', userUid);
       await setDoc(docRef, {
-        name: name,
         uid: values.user.uid,
+        name: name,
         email: values.user.email,
       })
+      .then(() => {
 
-      let data = {
-        name: name,
-        uid: values.user.uid,
-        email: values.user.email,
-      }
+        let data = {
+          name: name,
+          uid: values.user.uid,
+          email: values.user.email,
+        }
+  
+        setLoading(false);
+        setUser(data);
+        storage(data);
+        toast.success('Bem vindo a Talkioo!')
+        navigate('/lessons')
+      })
 
-      setLoading(false);
-      setUser(data);
-      storage(data);
     })
     .catch( async (e) => {
       console.log(`Erro: ${e}`);
       alert('Tente novamente! Algo deu errado, confira se preencheu todos os campos');
       setLoading(false);
+      toast.error('Ops, algo está errado!')
     })
     
   }
 
-  async function signIn(e) {
-    e.preventDefault();
+  async function signIn(email, password) {
 
     await signInWithEmailAndPassword(auth, email, password)
     .then( async (values) => {
 
       setLoading(true);
 
-      const userUid = values.user.uid
+      const userUid = values.user.uid;
       const docRef = doc(db, 'user', userUid);
-      await setDoc(docRef, {
-        name: name,
-        uid: values.user.uid,
-        email: values.user.email,
-      })
+
+      const docSnap = await getDoc(docRef)
 
       let data = {
-        name: name,
-        uid: values.user.uid,
+        uid: userUid,
+        name: docSnap.data().name,
         email: values.user.email,
       }
 
       setLoading(false);
       setUser(data);
       storage(data);
+      toast.success('Bem vindo de volta a Talkioo!');
+      navigate('/lessons')
     })
     .catch((e) => {
       console.log(`Erro: ${e}`);
+      toast.error('Ops, algo está errado!')
     })
   }
 
@@ -83,6 +103,7 @@ const AuthProvider = ({ children }) => {
     await signOut(auth)
     setUser(null)
     localStorage.removeItem('userToken');
+    toast.success('Você saiu, até logo!');
   }
 
   function storage(e) {
@@ -90,7 +111,7 @@ const AuthProvider = ({ children }) => {
   }
 
   return (
-    <appContext.Provider value={{ name, email, password, setName, setEmail, setPassword, signUp, signIn, userSignOut, loading, user, setUser }}>
+    <appContext.Provider value={{ signUp, signIn, userSignOut, loading, user, setUser }}>
       { children }
     </appContext.Provider>
   )
