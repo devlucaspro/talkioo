@@ -51,7 +51,7 @@ header ul a:hover::after {
 .btn-bell {
     color: var(--black);
     background-color: transparent;
-    padding: 5px;
+    padding: 10px;
     border: none;
     transition: all .3s;
 }
